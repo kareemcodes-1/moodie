@@ -7,12 +7,12 @@ import NavSwiper from '@/app/components/swiper/nav-swiper';
 import Card from '@/app/components/card';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
+import { Cast, Result } from '@/types';
 
 const SeriesPage = () => {
   const params = useParams();
-  const { result, casts } = use(getTV(Number(params.id)));
-  const recommendedSeries = use(getGenre(result.genres[0].id, "tv"));
-  console.log(casts)
+  const { result, casts }: { result: Result; casts: Cast[] }  = use(getTV(Number(params.id)));
+  const recommendedSeries: Result[] = use(getGenre(result.genres[0].id, "tv"));
 
   return (
     <>
@@ -86,7 +86,7 @@ const SeriesPage = () => {
         {/* Recommended Movies */}
         <div className="flex flex-col gap-4">
           <h2 className="text-xl md:text-2xl font-bold">Recommended</h2>
-          <div className="lg:grid grid-cols-4 flex flex-col gap-4">
+          <div className="flex flex-col sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {recommendedSeries.map((item: any, index: number) => (
               <Card genre={Number(params.genre)} loading={false} type={"tv"} key={index} item={item} />
             ))}

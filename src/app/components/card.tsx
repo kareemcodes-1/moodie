@@ -1,21 +1,22 @@
+import { Result } from '@/types';
 import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation';
 import React from 'react'
 import Skeleton from 'react-loading-skeleton';
 import "react-loading-skeleton/dist/skeleton.css";
 
 type Type =  "movie" | "tv"
 
-const Card = ({ item, type, loading, genre }: { item: any, genre: number, type: Type, loading: boolean }) => {
-  const router = useRouter();
-  function refresh(type: string, genre: number, item: any){
+const Card = ({ item, type, loading, genre }: { item: Result, genre: number, type: Type, loading: boolean }) => {
+  function refresh(type: string, genre: number, item: Result){
     if(type === 'movie'){
        window.location.href = `/genre/${genre}/movie/${item.id}`;
     }else{
       window.location.href = `/genre/${genre}/series/${item.id}`;
     }
   }
+
+  console.log(item)
+
   return (
     <div onClick={() => refresh(type, genre, item)}
       className="relative flex flex-col gap-2 cursor-pointer group"

@@ -6,8 +6,9 @@ import { Autoplay, Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { Cast } from '@/types';
 
-export default function NavSwiper({ casts }: { casts: any[] }) {
+export default function NavSwiper({ casts }: { casts: Cast[] }) {
   // If cast list is shorter than the number of slides, avoid looping
   const shouldLoop = casts.length > 8;
 

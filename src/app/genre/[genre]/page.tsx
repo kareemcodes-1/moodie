@@ -4,11 +4,12 @@ import React, { useEffect, useState } from 'react';
 import { getGenre } from '@/app/actions';
 import Card from '@/app/components/card';
 import { useParams } from 'next/navigation';
+import { Result } from '@/types';
 
 const GenrePage = () => {
   const [mediaType, setMediaType] = useState<"movie" | "tv">("movie");
   const [language, setLanguage] = useState<string | undefined>();
-  const [items, setItems] = useState<any[]>([]);
+  const [items, setItems] = useState<Result[]>([]);
   const [loading, setLoading] = useState(false);
   const params = useParams();
   const genre = params.genre
@@ -91,7 +92,7 @@ const GenrePage = () => {
       {/* Items Grid */}
       <div className="grid md:grid-cols-5 gap-[1.5rem] mt-[2rem]">
         {items && items.length > 0 && (
-          items.map((item: any) => (
+          items.map((item) => (
             <Card loading={loading} genre={Number(genre)} type={mediaType} item={item} key={item.id} />
           ))
         )}

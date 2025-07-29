@@ -1,17 +1,17 @@
 'use client';
 
 import { getGenre, getMovie } from '@/app/actions';
-import { FaDownload, FaPlay, FaShare } from "react-icons/fa";
 import React, { use } from 'react';
 import NavSwiper from '@/app/components/swiper/nav-swiper';
 import Card from '@/app/components/card';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
+import { Cast, Result } from '@/types';
 
 const MoviePage = () => {
   const params = useParams();
-  const { result, casts } = use(getMovie(Number(params.id)));
-  const recommendedMovies = use(getGenre(result.genres[0].id, 'movie'));
+  const { result, casts }: { result: Result; casts: Cast[] } = use(getMovie(Number(params.id)));
+  const recommendedMovies: Result[] = use(getGenre(result.genres[0].id, 'movie'));
 
   return (
     <>
@@ -56,7 +56,7 @@ const MoviePage = () => {
 
               {/* Production companies */}
               <div className="flex flex-wrap items-center gap-3 mt-2">
-                {result.production_companies?.map((company: any, index: number) =>
+                {result.production_companies?.map((company, index: number) =>
                   company.logo_path ? (
                     <img
                       key={index}
@@ -98,7 +98,7 @@ const MoviePage = () => {
         <div className="flex flex-col gap-4">
           <h2 className="text-xl md:text-2xl font-bold">Recommended</h2>
           <div className="flex flex-col sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {recommendedMovies.map((item: any, index: number) => (
+            {recommendedMovies.map((item, index: number) => (
               <Card type="movie" loading={false} genre={Number(params.genre)} key={index} item={item} />
             ))}
           </div>

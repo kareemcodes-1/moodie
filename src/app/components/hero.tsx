@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { useRouter } from "next/navigation";
 import Marquee from "react-fast-marquee";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Image from "next/image";
 
 const Hero = () => {

@@ -17,6 +17,6 @@ export async function GET(req: Request) {
       }
     });
   } catch (err) {
-    return new Response("Error fetching image", { status: 500 });
+    return new Response(`Error fetching image, ${err}`, { status: 500 });
   }
 }
