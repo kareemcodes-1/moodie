@@ -51,7 +51,7 @@ const SeriesPage = () => {
 
               {/* Genres */}
               <div className="flex flex-wrap gap-2 mt-2">
-                {result.genres?.map((genre: any, index: number) => (
+                {result.genres?.map((genre, index: number) => (
                   <span key={index} className="bg-black/40 px-3 py-[.7rem] rounded-md text-sm backdrop-blur-sm">
                     {genre.name}
                   </span>
@@ -60,7 +60,7 @@ const SeriesPage = () => {
 
               {/* Production companies */}
               <div className="flex flex-wrap items-center gap-3 mt-2">
-                {result.production_companies?.map((company: any, index: number) =>
+                {result.production_companies?.map((company, index: number) =>
                   company.logo_path ? (
                     <img
                       key={index}
@@ -87,7 +87,7 @@ const SeriesPage = () => {
         <div className="flex flex-col gap-4">
           <h2 className="text-xl md:text-2xl font-bold">Recommended</h2>
           <div className="flex flex-col sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {recommendedSeries.map((item: any, index: number) => (
+            {recommendedSeries.map((item, index: number) => (
               <Card genre={Number(params.genre)} loading={false} type={"tv"} key={index} item={item} />
             ))}
           </div>

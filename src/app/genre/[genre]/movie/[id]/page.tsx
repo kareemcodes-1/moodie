@@ -47,7 +47,7 @@ const MoviePage = () => {
 
               {/* Genres */}
               <div className="flex flex-wrap gap-2 mt-2">
-                {result.genres?.map((genre: any, index: number) => (
+                {result.genres?.map((genre, index: number) => (
                   <span key={index} className="bg-black/40 px-3 lg:py-[.8rem] py-[.5rem] rounded-md text-[1rem] backdrop-blur-sm">
                     {genre.name}
                   </span>
