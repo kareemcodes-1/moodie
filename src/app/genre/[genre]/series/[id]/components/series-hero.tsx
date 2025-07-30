@@ -39,7 +39,7 @@ const SeriesHero = ({ result, videos }: Props) => {
         alt={result.name}
         className="w-full object-cover h-[40rem] md:h-[30rem] lg:h-[100vh]"
       />
-      <div className=" bg-black/70 absolute lg:top-[0rem] bottom-[0rem] w-full lg:h-[100vh] h-[40rem] lg:blur-[30rem] blur-[15rem]" />
+     <div className=" bg-[#0000005c] absolute lg:top-[0rem] bottom-[0rem] w-full lg:h-[100vh] h-[40rem]" />
 
 
 
@@ -76,7 +76,7 @@ const SeriesHero = ({ result, videos }: Props) => {
               ))}
             </div>
 
-                  <div className="lg:absolute bottom-[1rem] right-[2rem] cursor-pointer">
+                   <div className="lg:absolute bottom-[2rem] right-[-5rem] cursor-pointer">
         <PlayButton onClick={() => setIsPlaying(true)} />
       </div>
 

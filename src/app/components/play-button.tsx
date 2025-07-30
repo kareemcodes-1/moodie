@@ -6,7 +6,7 @@ const PlayButton = ({ onClick }: { onClick: () => void }) => {
   return (
     <button
       onClick={onClick}
-      className="bg-red-400 hover:bg-red-500 text-white font-medium px-[1.5rem] py-[.7rem] rounded-lg flex items-center gap-2 cursor-pointer"
+      className="bg-red-400 hover:bg-red-500 text-white font-medium lg:px-[1.5rem] px-[1rem] py-[.7rem] rounded-lg flex items-center gap-2 cursor-pointer"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
