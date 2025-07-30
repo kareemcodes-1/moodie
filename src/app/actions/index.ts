@@ -132,6 +132,6 @@ export async function getTV(id: number) {
   const videos: VideosResponse = await resVideos.json();
   const casts = credits.cast
 
-  return { result, casts, videos };
+  return { result, casts, videos};
 }
 

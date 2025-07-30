@@ -32,7 +32,9 @@ export interface Result {
   genres: Genre[];
   vote_average: number;
   production_companies: ProductionCompany[];
-  videos?: Video; // 👈 Add this
+  videos?: Video;
+  seasons: Season[]
+
 }
 
 
@@ -52,6 +54,15 @@ export interface Video {
 export interface VideosResponse {
   id: number;
   results: Video[];
+}
+
+export interface Season {
+  air_date: string,
+  episode_count: number,
+  name: string
+  overview: string
+  poster_path: string
+  season_number: number
 }
 
 
