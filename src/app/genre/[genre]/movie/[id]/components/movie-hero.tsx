@@ -55,7 +55,7 @@ const MoviesHero = ({ result, videos }: Props) => {
           />
 
           <div className="text-white max-w-full md:max-w-[60%] flex flex-col gap-3">
-            <h2 className="text-[1.5rem] md:text-3xl lg:text-5xl font-extrabold">
+            <h2 className="text-[2.5rem] md:text-3xl lg:text-5xl font-extrabold">
               {result.title || result.original_title}
             </h2>
             <p className="text-sm md:text-base text-gray-200">

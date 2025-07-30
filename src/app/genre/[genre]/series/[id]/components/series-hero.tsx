@@ -41,9 +41,7 @@ const SeriesHero = ({ result, videos }: Props) => {
       />
       <div className="bg-black absolute lg:top-[0rem] bottom-[7rem] w-full lg:h-[100vh] h-[20rem] lg:blur-[30rem] blur-[15rem]" />
 
-      <div className="absolute lg:bottom-[2rem] bottom-[1rem] right-[2rem] cursor-pointer">
-        <PlayButton onClick={() => setIsPlaying(true)} />
-      </div>
+
 
       <div className="absolute lg:bottom-[4.5rem] bottom-0 left-4 w-[90%] pb-[1rem]">
         <div className="flex flex-col md:flex-row items-start gap-6 md:gap-12">
@@ -57,7 +55,7 @@ const SeriesHero = ({ result, videos }: Props) => {
           />
 
           <div className="text-white max-w-full md:max-w-[60%] flex flex-col gap-3">
-            <h2 className="text-[1.5rem] md:text-3xl lg:text-5xl font-extrabold">
+            <h2 className="text-[2.5rem] md:text-3xl lg:text-5xl font-extrabold">
               {result.name}
             </h2>
             <p className="text-sm md:text-base text-gray-200">
@@ -77,6 +75,10 @@ const SeriesHero = ({ result, videos }: Props) => {
                 </span>
               ))}
             </div>
+
+                  <div className="lg:absolute bottom-[1rem] right-[2rem] cursor-pointer">
+        <PlayButton onClick={() => setIsPlaying(true)} />
+      </div>
 
             {/* Production companies */}
             <div className="lg:flex hidden flex-wrap items-center gap-3 mt-2">
