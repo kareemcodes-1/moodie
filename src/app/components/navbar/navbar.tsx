@@ -10,7 +10,7 @@ const Navbar = () => {
                 m🍿odie
             </Link>
 
-            <Button type="button" className='text-white hover:!opacity-[.9] bg-red-400 text-[1rem]'>Contact us</Button>
+            <Button type="button" className='text-white hover:!opacity-[.9] bg-red-400 text-[1rem] font-medium'>Contact us</Button>
         </nav>
     </header>
   )

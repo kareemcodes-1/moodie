@@ -1,3 +1,5 @@
+
+"use client";
 import { Result } from '@/types';
 import Image from 'next/image'
 import React from 'react'
@@ -8,6 +10,8 @@ type Type =  "movie" | "tv"
 
 const Card = ({ item, type, loading, genre }: { item: Result, genre: number, type: Type, loading: boolean }) => {
   function refresh(type: string, genre: number, item: Result){
+    
+  console.log(type)
     if(type === 'movie'){
        window.location.href = `/genre/${genre}/movie/${item.id}`;
     }else{
@@ -15,7 +19,6 @@ const Card = ({ item, type, loading, genre }: { item: Result, genre: number, typ
     }
   }
 
-  console.log(item)
 
   return (
     <div onClick={() => refresh(type, genre, item)}
@@ -26,12 +29,12 @@ const Card = ({ item, type, loading, genre }: { item: Result, genre: number, typ
       </div>
 
       <div className="relative">
-        {loading ? <Skeleton className='h-[20rem] w-full' /> : <Image
+        {loading ? <Skeleton className='h-[20rem] w-full' /> : <img
           src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
           alt={type === 'movie' ? item.title : item.name}
-          width={500}
-          height={500}
-          quality={100}
+          // width={500}
+          // height={500}
+          // quality={100}
           className="rounded-xl w-full lg:h-auto h-[25rem] object-cover"
         />}
         <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity rounded-xl" />
