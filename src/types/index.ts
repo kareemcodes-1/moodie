@@ -65,4 +65,13 @@ export interface Season {
   season_number: number
 }
 
+export interface Episode {
+  air_date: string,
+  episode_number: number,
+  name: string
+  still_path: string
+  runtime: number
+}
+
+
 

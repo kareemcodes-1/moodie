@@ -1,6 +1,6 @@
 "use client";
 import EpisodeSwiper from "@/app/components/swiper/episode-swiper";
-import { Season } from "@/types";
+import { Episode, Season } from "@/types";
 import React, { useEffect, useState } from "react";
 
 import {
@@ -18,7 +18,7 @@ type Props = {
 };
 
 const SeriesEpisodes = ({ tvId, seasons }: Props) => {
-  const [episodes, setEpisodes] = useState<any[]>([]);
+  const [episodes, setEpisodes] = useState<Episode[]>([]);
   const [currentSeason, setCurrentSeason] = useState<number>(1);
 
   useEffect(() => {

@@ -5,9 +5,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { Episode } from '@/types';
 
 
-const EpisodeSwiper = ({episodes}: {episodes: any[]}) => {
+const EpisodeSwiper = ({episodes}: {episodes: Episode[]}) => {
 
   return (
     <Swiper
